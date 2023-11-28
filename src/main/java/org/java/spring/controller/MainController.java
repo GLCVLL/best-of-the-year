@@ -8,6 +8,7 @@ import org.java.model.Song;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 
@@ -64,5 +65,40 @@ public class MainController {
         model.addAttribute("titles", st);
         return "songs";
     }
+    
+    // BY ID METHODS
+    
+	@GetMapping("/movies/{id}")
+	
+	public String getMovieById(Model model, @PathVariable int id) {
+	    List<Movie> m = getBestMovies();
+	    
+	    for (Movie movie : m) {
+	        if (movie.getId() == id) {
+	            model.addAttribute("title", movie.getTitle());
+	            return "getMovieById";
+	        }
+	    }
+
+	    model.addAttribute("title", "Film non trovato");
+
+	    return "getMovieById";
+	}
+	
+	@GetMapping("/songs/{id}")
+	public String getSongById(Model model, @PathVariable int id) {
+	    List<Song> s = getBestSongs();
+	    
+	    for (Song song : s) {
+	        if (song.getId() == id) {
+	            model.addAttribute("title", song.getTitle());
+	            return "getSongById";
+	        }
+	    }
+
+	    model.addAttribute("title", "Canzone non trovata");
+
+	    return "getSongById";
+	}
 
 }
