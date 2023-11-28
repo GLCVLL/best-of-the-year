@@ -2,8 +2,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-    <title>Best of the Year</title>
-    <style>
+<title>Best Movies</title>
+
+<style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -40,11 +41,26 @@
                 background-position: 0% 50%;
             }
         }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+            color: #555;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Best of the Year by <span>[[${author}]]</span></h1>
+        <h1>Best Movies</h1>
+        <ul>
+            <li>[[${titles[0]}]]</li>
+            <li>[[${titles[1]}]]</li>
+            <li>[[${titles[2]}]]</li>
+        </ul>
     </div>
 </body>
 </html>
