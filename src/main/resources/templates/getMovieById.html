@@ -5,12 +5,14 @@
 <title>Best Movies</title>
 <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}"/>
 </head>
-<body>
-<div class="container">
-    <h1>Movie Details</h1>
-    <p>Title: <span th:text="${title}"></span></p>
-    <a href="/">Back to Homepage</a>
-</div>
-<script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.bundle.min.js}"></script>
+<body class="bg-light">
+    <div class="container my-4">
+        <h1 class="text-center">Movie Details</h1>
+        <p class="lead text-center" th:text="${title}"></p>
+        <div class="text-center">
+            <a class="btn btn-primary" href="/">Back to Homepage</a>
+        </div>
+    </div>
+    <script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
