@@ -8,12 +8,36 @@
 </head>
 <body>
 <header>
-    <div class="container">
-        <h1>Best of the year by <span th:text="${author}"></span></h1>
-        <p><a href="/movies">Best Movies</a></p>
-        <p><a href="/songs">Best Songs</a></p>
-    </div>
+
+    
+    <nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <h3 class="text-center my-3">Best of the year by <span th:text="${author}"></span></h3>
+    <div class="d-flex align-item-center">
+		 <a class="btn btn-primary me-2" href="/movies">Best Movies</a>
+		 <a class="btn btn-primary me-2" href="/songs">Best Songs</a>
+	</div>
+  </div>
+</nav>
 </header>
+
+<div class="container">
+	
+	<main>
+	<div class="row my-4">
+		<div class="col d-flex justify-content-center align-item-center">
+				<div class="card" style="width: 25rem;">
+                <img src="https://picsum.photos/300/200" class="card-img-top" alt="img">
+                <div class="card-body">
+                <h5 class="card-title">Best Of The Year By...</h5>
+                <p class="card-text">Welcome to the best of the year stranger</p>
+               </div>
+         </div>
+	</div>
+
+</main>
+	
+</div>
 <script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
