@@ -41,28 +41,17 @@ public class MainController {
     @GetMapping("/movies")
     
     public String getMovies(Model model) {
-    	List<Movie> m = getBestMovies();
-    	List<String> mt = new ArrayList<>();
-        for (Movie movie : m) {
-            mt.add(movie.getTitle());
-        }
-        
-        model.addAttribute("titles", mt);
-        
+        List<Movie> movies = getBestMovies();
+        model.addAttribute("movies", movies);
         return "movies";
-    	
     }
     
     // SONG METHOD
     
     @GetMapping("/songs")
     public String getSongs(Model model) {
-        List<Song> s = getBestSongs();
-        List<String> st = new ArrayList<>();
-        for (Song song : s) {
-            st.add(song.getTitle());
-        }
-        model.addAttribute("titles", st);
+        List<Song> songs = getBestSongs();
+        model.addAttribute("songs", songs);
         return "songs";
     }
     
